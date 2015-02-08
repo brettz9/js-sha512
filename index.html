@@ -34,8 +34,8 @@
         <h1>
 <a id="js-sha512" class="anchor" href="#js-sha512" aria-hidden="true"><span class="octicon octicon-link"></span></a>js-sha512</h1>
 
-<p><a href="https://travis-ci.org/emn178/js-sha512"><img src="https://api.travis-ci.org/emn178/js-sha512.png" alt="Build Status"></a>
-<a href="https://coveralls.io/r/emn178/js-sha512?branch=master"><img src="https://coveralls.io/repos/emn178/js-sha512/badge.png?branch=master" alt="Build Status"></a><br>
+<p><a href="https://travis-ci.org/emn178/js-sha512"><img src="https://travis-ci.org/emn178/js-sha512.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/r/emn178/js-sha512?branch=master"><img src="https://coveralls.io/repos/emn178/js-sha512/badge.svg?branch=master" alt="Coverage Status"></a><br>
 <a href="https://nodei.co/npm/js-sha512/"><img src="https://nodei.co/npm/js-sha512.png?stars&amp;downloads" alt="NPM"></a><br>
 A simple SHA-512, SHA-384, SHA-512/224, SHA-512/256 hash functions for JavaScript supports UTF-8 encoding.</p>
 
@@ -86,77 +86,6 @@ sha512_224(<span class="pl-s1"><span class="pl-pds">'</span>Message to hash<span
 sha384 <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>js-sha512<span class="pl-pds">'</span></span>).sha384;
 sha512_256 <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>js-sha512<span class="pl-pds">'</span></span>).sha512_256;
 sha512_224 <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>js-sha512<span class="pl-pds">'</span></span>).sha512_224;</pre></div>
-
-<h3>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
-
-<h4>
-<a id="sha512str-asciionly" class="anchor" href="#sha512str-asciionly" aria-hidden="true"><span class="octicon octicon-link"></span></a>sha512(str, asciiOnly)</h4>
-
-<p>Hash string to sha512, set asciiOnly to true for better performace if you ensure input is ascii.</p>
-
-<h5>
-<a id="str-string" class="anchor" href="#str-string" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>str: <code>String</code></em>
-</h5>
-
-<p>String to hash.</p>
-
-<h5>
-<a id="asciionly-boolean-default-false" class="anchor" href="#asciionly-boolean-default-false" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>asciiOnly: <code>Boolean</code> (default: <code>false</code>)</em>
-</h5>
-
-<p>Specify the string encoding is ASCII.</p>
-
-<h4>
-<a id="sha384str-asciionly" class="anchor" href="#sha384str-asciionly" aria-hidden="true"><span class="octicon octicon-link"></span></a>sha384(str, asciiOnly)</h4>
-
-<p>Hash string to sha384, set asciiOnly to true for better performace if you ensure input is ascii.</p>
-
-<h5>
-<a id="str-string-1" class="anchor" href="#str-string-1" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>str: <code>String</code></em>
-</h5>
-
-<p>String to hash.</p>
-
-<h5>
-<a id="asciionly-boolean-default-false-1" class="anchor" href="#asciionly-boolean-default-false-1" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>asciiOnly: <code>Boolean</code> (default: <code>false</code>)</em>
-</h5>
-
-<p>Specify the string encoding is ASCII.</p>
-
-<h4>
-<a id="sha512_256str-asciionly" class="anchor" href="#sha512_256str-asciionly" aria-hidden="true"><span class="octicon octicon-link"></span></a>sha512_256(str, asciiOnly)</h4>
-
-<p>Hash string to sha512/256, set asciiOnly to true for better performace if you ensure input is ascii.</p>
-
-<h5>
-<a id="str-string-2" class="anchor" href="#str-string-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>str: <code>String</code></em>
-</h5>
-
-<p>String to hash.</p>
-
-<h5>
-<a id="asciionly-boolean-default-false-2" class="anchor" href="#asciionly-boolean-default-false-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>asciiOnly: <code>Boolean</code> (default: <code>false</code>)</em>
-</h5>
-
-<p>Specify the string encoding is ASCII.</p>
-
-<h4>
-<a id="sha512_224str-asciionly" class="anchor" href="#sha512_224str-asciionly" aria-hidden="true"><span class="octicon octicon-link"></span></a>sha512_224(str, asciiOnly)</h4>
-
-<p>Hash string to sha512/224, set asciiOnly to true for better performace if you ensure input is ascii.</p>
-
-<h5>
-<a id="str-string-3" class="anchor" href="#str-string-3" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>str: <code>String</code></em>
-</h5>
-
-<p>String to hash.</p>
-
-<h5>
-<a id="asciionly-boolean-default-false-3" class="anchor" href="#asciionly-boolean-default-false-3" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>asciiOnly: <code>Boolean</code> (default: <code>false</code>)</em>
-</h5>
-
-<p>Specify the string encoding is ASCII.</p>
 
 <h2>
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
