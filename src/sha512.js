@@ -1,3 +1,4 @@
+/*jslint bitwise:true, vars:true*/
 /*
  * js-sha512 v0.2.2
  * https://github.com/emn178/js-sha512
@@ -7,10 +8,10 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-;(function(root, undefined) {
+;(function(root) {
   'use strict';
 
-  var NODE_JS = typeof(module) != 'undefined';
+  var NODE_JS = module !== undefined;
   if(NODE_JS) {
     root = global;
   }
@@ -60,18 +61,6 @@
 
   var blocks = [];
 
-  var sha384 = function(message) {
-    return sha512(message, 384);
-  };
-
-  var sha512_256 = function(message) {
-    return sha512(message, 256);
-  };
-
-  var sha512_224 = function(message) {
-    return sha512(message, 224);
-  };
-
   var sha512 = function(message, bits) {
     var h0h, h0l, h1h, h1l, h2h, h2l, h3h, h3l, 
         h4h, h4l, h5h, h5l, h6h, h6l, h7h, h7l, block, code, end = false,
@@ -80,7 +69,7 @@
         abh, abl, dah, dal, cdh, cdl, bch, bcl,
         majh, majl, t1h, t1l, t2h, t2l, chh, chl;
 
-    if(bits == 384) {
+    if(bits === 384) {
       h0h = 0xCBBB9D5D;
       h0l = 0xC1059ED8;
       h1h = 0x629A292A;
@@ -97,7 +86,7 @@
       h6l = 0x64F98FA7;
       h7h = 0x47B5481D;
       h7l = 0xBEFA4FA4;
-    } else if(bits == 256) {
+    } else if(bits === 256) {
       h0h = 0x22312194;
       h0l = 0xFC2BF72C;
       h1h = 0x9F555FA3;
@@ -114,7 +103,7 @@
       h6l = 0x2C85B8AA;
       h7h = 0x0EB72DDC;
       h7l = 0x81C52CA2;
-    } else if(bits == 224) {
+    } else if(bits === 224) {
       h0h = 0x8C3D37C8;
       h0l = 0x19544DA2;
       h1h = 0x73E19966;
@@ -182,7 +171,7 @@
       }
       bytes += i - start;
       start = i - 128;
-      if(index == length) {
+      if(index === length) {
         blocks[i >> 2] |= EXTRA[i & 3];
         ++index;
       }
@@ -543,7 +532,7 @@
              HEX_CHARS[(h5l >> 12) & 0x0F] + HEX_CHARS[(h5l >> 8) & 0x0F] +
              HEX_CHARS[(h5l >> 4) & 0x0F] + HEX_CHARS[h5l & 0x0F];
     }
-    if(bits == 512) {
+    if(bits === 512) {
       hex += HEX_CHARS[(h6h >> 28) & 0x0F] + HEX_CHARS[(h6h >> 24) & 0x0F] +
              HEX_CHARS[(h6h >> 20) & 0x0F] + HEX_CHARS[(h6h >> 16) & 0x0F] +
              HEX_CHARS[(h6h >> 12) & 0x0F] + HEX_CHARS[(h6h >> 8) & 0x0F] +
@@ -563,6 +552,19 @@
     }
     return hex;
   };
+
+  var sha384 = function(message) {
+    return sha512(message, 384);
+  };
+
+  var sha512_256 = function(message) {
+    return sha512(message, 256);
+  };
+
+  var sha512_224 = function(message) {
+    return sha512(message, 224);
+  };
+
 
   if(!root.JS_SHA512_TEST && NODE_JS) {
     sha512.sha512 = sha512;
